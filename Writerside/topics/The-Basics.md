@@ -74,6 +74,93 @@ Console.WriteLine(coolString);
 </code-block>
 Output:<code>coolThing</code>
 
+<code>+</code> Will also add two or more integers, floats value or similar together
+
+<code-block lang="c#">
+int i = 100 + 25;
+Console.WriteLine(i);
+</code-block>
+
+Output: <code>125</code>
+
+<code>-</code> This is the negative operator it will subtract one integer, float value or similar from anouther
+<code-block lang="c#">
+int i = 100 - 25;
+Console.WriteLine(i);
+</code-block>
+
+Output: <code>75</code>
+
+<code>*</code> This is the multiplication operator it will multiply two integer, float value or similar together
+<code-block lang="c#">
+int i = 5 * 5;
+Console.WriteLine(i);
+</code-block>
+
+Output: <code>25</code>
+
+<code>/</code> This is the division operator it will divide two integer, float value or similar
+<code-block lang="c#">
+int i = 25 / 5;
+Console.WriteLine(i);
+</code-block>
+
+Output: <code>5</code>
+
+Remember that when dividing integers we don't always get a whole number in the last example we were lucky 25 divided by 5 is 5 exactly but take the next example
+
+<code-block lang="c#">
+int i = 5 / 4;
+Console.WriteLine(i);
+</code-block>
+
+Output: <code>1</code>
+
+Our output is zero because integer values can only store whole numbers or integers as such C# will round the actual answer <code>1.25</code> to <code>1</code>
+
+<code>%</code> This is the modulo operator it will find the remainder of division of one integer, float value or similar to anouther
+
+<code-block lang="c#">
+int i = 6 / 5;
+Console.WriteLine(i);
+</code-block>
+
+Output: <code>1</code>
+
+### Loops
+
+### For Loops
+
+The first statement will be executed on the loops first run
+
+The second statement will be checked to see if true everytime the loop runs if statement not true then loop will exit
+
+The third statement will executed everytime the loop completes successfully
+
+Here is an example of a loop that starts at 1 and will count up until it hits 100
+
+
+```` c#
+for (int i = 1; i <= 100; i++)
+{
+    Console.WriteLine(i);
+}
+````
+
+### While loops
+
+While loops are much simpler instead of having three statements we only have one which will tell the loop to continue looping as long as the statement continues to be true
+
+In this example we have a loop that will continue on indefinitely
+```` c#
+int i = 0;
+while (true)
+{
+    i++;
+    Console.WriteLine(i);
+}
+````
+
 ### Arrays
 
 In this example we are making an empty integer array where the user input specifies the array length
