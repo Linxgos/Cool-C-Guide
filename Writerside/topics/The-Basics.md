@@ -1,6 +1,6 @@
 # The Basics
 
-### Comments
+## Comments
 
 Comments are used to tell the C# language that a certain section of your code should not be treated as actual code and
 should be ignored they are often used document code and temperately remove sections of code
@@ -22,7 +22,7 @@ line to keep the code commented */
 </code-block>
 <code>//</code> is better for commenting single or a few lines while <code>/* */</code> is better for commenting big sections
 
-### Data Types
+## Data Types
 
 | Data Type | Description                                                                                          |
 |-----------|------------------------------------------------------------------------------------------------------|
@@ -35,7 +35,7 @@ line to keep the code commented */
 | char      | Stores one character                                                                                 |
 | string    | Similar to char but stores more then one character                                                   |
 
-### Initialising and declaring variables
+## Initialising and declaring variables
 
 In these examples we are only declaring a variable
 <code-block lang="c#">
@@ -64,7 +64,44 @@ string personName = "Nolan";
 int numberOfMarbles = 27;
 </code-block>
 
-### Concatenation and Operators and Console.WriteLine()
+## Concatenation and Operators and Escape Sequences
+
+### Escape Sequences / Special Characters
+When dealing with string (anything inside <code>"""</code> quotations) some specific combinations of characters will not be printed out verbatim and will be treated as special sequences that do various actions
+
+| Code | What it does     | Example        | Output          |   |
+|------|------------------|----------------|-----------------|---|
+| /n   | Enters new line  | "Hello\nNolan" | Hello Nolan     |   |
+| /t   | Enters tab       | "Hello\tNolan" | Hello     Nolan |   |
+| /b   | Enters Backspace | "Hello\bNolan" | HellNolan       |   |
+
+Sometimes this behaviour is undesirable for example
+
+<code-block lang="c#">
+Console.WriteLine("My name is brown\nolan");
+</code-block>
+
+Here I am attempting to print the words <code>"My name is brown\nolan"</code> verbatim but because of the <code>\n</code> the output will actually be
+
+Output: 
+<code-block>
+My name is brown
+olan
+</code-block>
+
+That's not what I wanted
+
+To fix this we can use the <code>\\\\</code> escape sequence to write a <code> \ </code> to the console and not have it be treated as a <code>\n</code> escape sequence
+
+<code-block lang="c#">
+Console.WriteLine("My name is brown\\nolan");
+</code-block>
+
+Output: <code>My name is brown\nolan</code>
+
+Similar problems can be encountered when trying to write <code>'</code> and <code>"</code> to the console so similarly there are the <code>\'</code> and <code>\"</code> respectively which allow these characters to be printed to the console
+
+### Concatenation and Operators
 
 <code>+</code> This is the concatenation operator when acting on string it will put the string together without spaces in between
 
@@ -107,7 +144,8 @@ Console.WriteLine(i);
 
 Output: <code>5</code>
 
-Remember that when dividing integers we don't always get a whole number in the last example we were lucky 25 divided by 5 is 5 exactly but take the next example
+Remember that when dividing integers we don't always get a whole number in the last example we were lucky 25 divided by
+5 is 5 exactly but take the next example
 
 <code-block lang="c#">
 int i = 5 / 4;
@@ -116,7 +154,8 @@ Console.WriteLine(i);
 
 Output: <code>1</code>
 
-Our output is zero because integer values can only store whole numbers or integers as such C# will round the actual answer <code>1.25</code> to <code>1</code>
+Our output is zero because integer values can only store whole numbers or integers as such C# will round the actual
+answer <code>1.25</code> to <code>1</code>
 
 <code>%</code> This is the modulo operator it will find the remainder of division of one integer, float value or similar to anouther
 
@@ -127,7 +166,25 @@ Console.WriteLine(i);
 
 Output: <code>1</code>
 
-### Loops
+<code>++</code> This is the increment operator it will add one to an integer, float or similar
+
+<code-block lang="c#">
+int i = 5;
+i++;
+Console.WriteLine(i);
+</code-block>
+
+Output: <code>6</code>
+
+<code>--</code> This is the deincrement operator it will subtract one to an integer, float or similar
+
+<code-block lang="c#">
+int i = 5;
+i--;
+Console.WriteLine(i);
+</code-block>
+
+## Loops
 
 ### For Loops
 
@@ -139,7 +196,6 @@ The third statement will executed everytime the loop completes successfully
 
 Here is an example of a loop that starts at 1 and will count up until it hits 100
 
-
 ```` c#
 for (int i = 1; i <= 100; i++)
 {
@@ -149,9 +205,11 @@ for (int i = 1; i <= 100; i++)
 
 ### While loops
 
-While loops are much simpler instead of having three statements we only have one which will tell the loop to continue looping as long as the statement continues to be true
+While loops are much simpler instead of having three statements we only have one which will tell the loop to continue
+looping as long as the statement continues to be true
 
 In this example we have a loop that will continue on indefinitely
+
 ```` c#
 int i = 0;
 while (true)
@@ -161,7 +219,7 @@ while (true)
 }
 ````
 
-### Arrays
+## Arrays
 
 In this example we are making an empty integer array where the user input specifies the array length
 <code-block lang="c#">
